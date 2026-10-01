@@ -4,6 +4,34 @@ An autonomous IoT embedded node built on **ESP32-C3** that automates plant irrig
 
 ---
 
+## 🎯 Project Overview (What It Does)
+
+This project is an automated, smart plant care and environmental monitoring station designed to solve two common indoor gardening problems: **over-watering / pump burnout** and **poor room ventilation**.
+
+- **Automates Plant Watering**: Continuously monitors soil moisture via a capacitive sensor and triggers a 5V pump only when the plant actually needs water.
+- **Prevents Flooding & Hardware Damage**: Employs a multi-stage watering logic with 60-second soak intervals and an automatic 30-minute lockout if the water tank runs dry.
+- **Monitors Indoor Air Quality**: Tracks $eCO2$ and $TVOC$ levels in real-time to detect stagnant or poor air quality in the room.
+- **Sends Instant Telegram Alerts**: Keeps you informed about watering events, low moisture levels, emergency lockouts, and air quality warnings directly on your phone.
+
+---
+
+---
+
+## 📹 Video Demonstration
+
+[![Smart Irrigation Node Demo](https://img.youtube.com/vi/jKkD71rhWAg/maxresdefault.jpg)](https://www.youtube.com/watch?v=jKkD71rhWAg)
+
+> 📌 *Click the thumbnail above to watch the full hardware demonstration and Telegram integration on YouTube.*
+
+## 🎬 How It Works (Demonstrated Features)
+
+- **Smart Watering Cycle**: Activates the 5V pump for 3 seconds, then waits **60 seconds** for water to soak into the soil before taking another reading.
+- **Fail-Safe Lockout**: After 3 unsuccessful attempts, locks the system for **30 minutes** and dispatches a critical Telegram alert to prevent pump damage.
+- **Auto-Reset**: Instantly clears the emergency lockout as soon as moisture levels return to normal.
+- **Real-Time Air Alerts**: Samples SGP30 gas sensor every 2 seconds and fires Telegram notifications if $eCO2$ or $TVOC$ exceed safety limits.
+
+---
+
 ## 🛠 Hardware Components & Pinout Specifications
 
 | Component | Exact Model / Module | Interface / Pin | Description |
